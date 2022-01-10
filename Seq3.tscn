@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fonts/Roboto-Light.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://videos/4Bruno Sam.webm" type="VideoStream" id=2]
+[ext_resource path="res://videos/6Pri Brunotu.webm" type="VideoStream" id=3]
+[ext_resource path="res://Seq3.gd" type="Script" id=4]
+[ext_resource path="res://seq3leftvid.gd" type="Script" id=5]
+[ext_resource path="res://seq3rightvid.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[node name="Seq3" type="HBoxContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -960.0
+margin_top = -270.0
+margin_right = 960.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 1920, 540 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="leftVid" type="VideoPlayer" parent="."]
+margin_right = 960.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stream = ExtResource( 2 )
+autoplay = true
+paused = true
+script = ExtResource( 5 )
+
+[node name="CenterContainer" type="CenterContainer" parent="leftVid"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="leftVid/CenterContainer"]
+margin_right = 960.0
+margin_bottom = 540.0
+rect_min_size = Vector2( 960, 540 )
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 0.745098 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="leftVid/CenterContainer"]
+margin_left = 80.0
+margin_top = 100.0
+margin_right = 880.0
+margin_bottom = 440.0
+rect_min_size = Vector2( 800, 340 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[fill]V hiši po steni visijo oljne slike. Prostor je urejen umetniško, z zamolklo svetlobo. Chiaro scuro. Ko vstopim v njegov dom, v ozadju zaslišim glasbo Tomaža Pengova. Ponudi mi smoothie. Bruno je bil še nekaj let nazaj alkoholik. Šest let nazaj je padel po stopnicah in si zlomil vretenca. Po tem, ko naj bi ga odpustili iz bolnišnice, ga je medicinska sestra vprašala, če ne bi šel raje na zdravljenje. Bruno pravi, da je takrat doživel razsvetljenje. Če se ne bi odločil za zdravljenje, bi najbrž umrl.[/fill]"
+text = "V hiši po steni visijo oljne slike. Prostor je urejen umetniško, z zamolklo svetlobo. Chiaro scuro. Ko vstopim v njegov dom, v ozadju zaslišim glasbo Tomaža Pengova. Ponudi mi smoothie. Bruno je bil še nekaj let nazaj alkoholik. Šest let nazaj je padel po stopnicah in si zlomil vretenca. Po tem, ko naj bi ga odpustili iz bolnišnice, ga je medicinska sestra vprašala, če ne bi šel raje na zdravljenje. Bruno pravi, da je takrat doživel razsvetljenje. Če se ne bi odločil za zdravljenje, bi najbrž umrl."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="leftVid"]
+
+[node name="rightVid" type="VideoPlayer" parent="."]
+margin_left = 960.0
+margin_right = 1920.0
+margin_bottom = 540.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stream = ExtResource( 3 )
+autoplay = true
+paused = true
+script = ExtResource( 6 )
+
+[node name="CenterContainer" type="CenterContainer" parent="rightVid"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="rightVid/CenterContainer"]
+margin_right = 960.0
+margin_bottom = 540.0
+rect_min_size = Vector2( 960, 540 )
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 0, 0, 0, 0.745098 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="rightVid/CenterContainer"]
+margin_left = 80.0
+margin_top = 27.0
+margin_right = 880.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 800, 485 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "[fill]V sobi so štirje tipi. Edi, iz Sužida, njega že poznam, dela v Anhovem. Drugi tip je Mario (33), ki je prinesel blagoslovljeno potičko. V potički je sveto olje s Črne gore. Sklepam, da je bil Mario včasih odvisnik, dokler ni postal pobožen. Ne pije, ne kadi, ne gleda tv, bere knjige. Ta tretji tip, z neznanim imenom, (35), zelo zadet, pravi da je ravno prišel iz zapora. In, kaj si naredil? Ropal sem. Banko, Tuš, Eurospin. No, Eurospin je bil neuspel poskus ropa. Vse skupaj sem bil v zaporu 5 let in 7 mesecev. In kako je, kaj se dogaja? Ja, beda, kako je. TV imaš, nimaš pa telefona, interneta ipd. Po dva, tri cimri v sobi. Je kaj drog tudi? Ja, veliko spida. Res bizarna družba v katero sem uletela, sredi Sužida.[/fill]"
+text = "V sobi so štirje tipi. Edi, iz Sužida, njega že poznam, dela v Anhovem. Drugi tip je Mario (33), ki je prinesel blagoslovljeno potičko. V potički je sveto olje s Črne gore. Sklepam, da je bil Mario včasih odvisnik, dokler ni postal pobožen. Ne pije, ne kadi, ne gleda tv, bere knjige. Ta tretji tip, z neznanim imenom, (35), zelo zadet, pravi da je ravno prišel iz zapora. In, kaj si naredil? Ropal sem. Banko, Tuš, Eurospin. No, Eurospin je bil neuspel poskus ropa. Vse skupaj sem bil v zaporu 5 let in 7 mesecev. In kako je, kaj se dogaja? Ja, beda, kako je. TV imaš, nimaš pa telefona, interneta ipd. Po dva, tri cimri v sobi. Je kaj drog tudi? Ja, veliko spida. Res bizarna družba v katero sem uletela, sredi Sužida."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="rightVid"]
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="mouse_entered" from="leftVid" to="leftVid" method="_on_leftVid_mouse_entered"]
+[connection signal="mouse_exited" from="leftVid" to="leftVid" method="_on_leftVid_mouse_exited"]
+[connection signal="timeout" from="leftVid/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="mouse_entered" from="rightVid" to="rightVid" method="_on_rightVid_mouse_entered"]
+[connection signal="mouse_exited" from="rightVid" to="rightVid" method="_on_rightVid_mouse_exited"]
+[connection signal="timeout" from="rightVid/Timer" to="." method="_on_Timer_timeout"]
